@@ -7,14 +7,20 @@
     <title>Revisão</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/x-icon" href="./img/logo.jpg">
+    <!-- adiciona biblioteca dos icones das redes sociais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="./js/script.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="cabecalho">
-            <div class="logo"> <img src="./img/logo.jpg" alt="Lula13"> </div>
-            <div class="links"> <a href="">Experiências</a> <a href="">Projetos</a> <a href="">Sobre</a> </div>
-            <div class="butao"> <button>Contate-nos</button> </div>
+            <div class="logo"> <img src="./img/logo.jpg" alt="Logo"> </div>
+            <!-- botão hamburguer (vísivel apenas no celular)-->
+            <button id="menuHamburguer" class="menu-hamburguer">☰</button>
+            <div class="links" id="menuLinks"> <a href="">Experiências</a> <a href="">Projetos</a> <a href="">Sobre</a>
+            </div>
+            <div class="butao"> <button id="bntContrateNos">Contrate-nos</button> </div>
         </div>
     </header>
     <div class="banner"> <img src="./img/banner.png" alt="">
@@ -63,6 +69,125 @@
                 </video> </div>
         </div>
     </section>
+    <!-- GALERIA DE PROJETOS / LINHAS COM FILTRO -->
+    <section class="galeria-secao">
+        <h2 class="titulo-produtos">Galeria de Categorias</h2>
+        <!-- botões de filtro -->
+        <div class="filtros">
+            <button class="btn-filtro ativo" data-categoria="todos">Todos</button>
+            <button class="btn-filtro" data-categoria="definicao">Definição</button>
+            <button class="btn-filtro" data-categoria="hidratacao">Hidratação</button>
+            <button class="btn-filtro" data-categoria="nutricao">Nutrição</button>
+        </div>
+        <!-- Cards da Galeria filtráveis -->
+        <div class="galeria-container">
+            <div class="card-item" data-categoria="definicao">
+                <img src="./img/produto1.png" alt="Gelatina Definidora">
+                <h3>Gelatina Cachos</h3>
+                <p>Categoria: Definição</p>
+            </div>
+            <div class="card-item" data-categoria="hidratacao">
+                <img src="./img/prdouto2.png" alt="Creme 1kg">
+                <h3>Creme de Pentear</h3>
+                <p>Categoria: Hidratação</p>
+            </div>
+            <div class="card-item" data-categoria="nutricao">
+                <img src="./img/produto3.png" alt="Óleo Sérum">
+                <h3>Sérum Multy</h3>
+                <p>Categoria: Nutrição</p>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div id="modalContato" class="modal-container">
+        <div class="modal-conteudo">
+            <span id="btnFecharModal" class="btn-fechar">&times;</span>
+            <h2>Contrate-nos</h2>
+            <form id="formContato">
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Insira seu nome" required>
+                </div>
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Insira seu email" required>
+                </div>
+                <div class="campo">
+                    <label for="assunto">Assunto</label>
+                    <input type="text" id="assunto" placeholder="Assunto do contato" required>
+                    <div class="campo">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea type="text" id="mensagem" placeholder="Sua mensagem..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar" id="btn-enviar">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Seção FAQ / Sanfona -->
+    <section class="faq-secao">
+        <h2 class="titulo-produtos">Perguntas Frequentes</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-pergunta">
+                    <span>Como usar a Gelatina Definidora?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+                <div class="faq-resposta">
+                    <p>Aplique nos cabelos úmidos, do comprimento às pontas, amassando os cachos de baixo para cima para
+                        garantir máxima definição.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta">
+                    <span>Qual o prazo de entrega dos produtos?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+                <div class="faq-resposta">
+                    <p>O prazo varia de acordo com a sua região, levando em média de 3 a 7 dias úteis após a confirmação
+                        do pagamento.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta">
+                    <span>Os produtos são testados em animais?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+                <div class="faq-resposta">
+                    <p>Não! Todos os produtos da linha A Beleza do Menino Fey são 100% cruelty-free e veganos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- rodapé -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-coluna">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="#">Experiências</a></li>
+                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </div>
+            <div class="footer-coluna">
+                <h3>Redes Sociais</h3>
+                <div class="redes-sociais">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+
+            </div>
+        </div>
+        <!-- linha copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 A Beleza do Menino Fey. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
